@@ -3,7 +3,7 @@ class SpecificationsController < ApplicationController
         load_and_authorize_resource
 
         def index
-                @group = Group.find(user: current_user, id: params[:group_id])
+                @group = Group.find_by(user: current_user, id: params[:group_id])
                 @specifications = @group.specifications
         end
 
@@ -30,7 +30,7 @@ class SpecificationsController < ApplicationController
         private 
 
         def specification_params
-                params.require(:specification).permit(:name, :amount, :groups)
+                params.require(:specification).permit(:name, :amount)
 
         end
 end
