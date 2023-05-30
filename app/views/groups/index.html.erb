@@ -7,7 +7,7 @@
 </div>
 
 <div class='categories_container'>
-<%@categories.each do |categorie|%>
+<% @categories.each do |categorie|%>
     <%= link_to group_specifications_path(categorie.id) do %>
     
     <div class='categorie_item'>
