@@ -4,4 +4,10 @@ class Group < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
+
+  private
+
+  def total_amount
+    specifications.sum(:amount)
+  end
 end
