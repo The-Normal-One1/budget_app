@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root to: "home#index"
 
   # Defines the root path route ("/")
-  root "pages#index"
+  root "pages#splash"
 
   # # Define routes for the groups
   # resources :groups
