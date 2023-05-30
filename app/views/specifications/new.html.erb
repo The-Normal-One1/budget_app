@@ -12,7 +12,7 @@
 
 <div class='specifiaction_container'>
 
-<%= form_for @categorie, url: group_specifications_path(@categorie.id), method: :post do |f| %> 
+<%= form_for @specification, url: group_specifications_path, method: :post do |f| %> 
 
     <div class='specification-body'>
         <div class='form-group'>
@@ -26,10 +26,10 @@
         </div>
     
 
-    <% if @group.any %>
+    <% if @groups.any? %>
         <div class='form-group'>
             <%= f.label :categories, class:'form-label' %> <br>
-            <%= f.select :group_id, @group.map { |g| [g.name, g.id] }, class:'form-control',  multiple: true, size: 5 %>
+            <%= select_tag :groups, options_for_select(@groups.map{|g| [g.name, g.id]}), class:'form-control', multiple: true, size: 3 %>
         </div>
     <% end %>
     </div>
