@@ -9,14 +9,14 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    if user.persisted?
-      can :manage, :all
+    return unless user.persisted?
+
+    can :manage, :all
     # if user.persisted? # logged in
     #   can :manage, Group, user_id: user.id
     #   can :manage, Specification, user_id: user.id
     #   can :manage, User, id: user.id
     # No abilities for guest users (not logged in)
-    end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
