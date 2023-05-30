@@ -2,11 +2,11 @@ class GroupsController < ApplicationController
 load_and_authorize_resource
 
 def index
-  @catagories = Group.all.where(:user_id => current_user.id).includes(:specifications)
+  @categories = Group.all.where(:user_id => current_user.id).includes(:specifications)
 end
 
 def new
-    @catagories = Group.new
+    @categorie = Group.new
 end 
 
 def create
@@ -23,4 +23,6 @@ private
 
 def group_params
     params.require(:group).permit(:name, :icon)
+end
+
 end
