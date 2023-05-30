@@ -2,3 +2,9 @@
 //= link_directory ../stylesheets .css
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
+//=link sessions/new.css
+//=link registrations/new.css
+//=link groups/index.css
+//=link groups/new.css
+//=link specifications/index.css
+//=link specifications/new.css
