@@ -12,9 +12,9 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.persisted?
-      can :read, User, id: user.id
-      can :update, User, id: user.id
-      can :destroy, User, id: user.id
+      can :read,[Group, Specification, User], user_id: user.id
+      can :update, [Group, Specification, User], user_id: user.id
+      can :destroy, [Group, Specification, User], user_id: user.id
     else
       # No abilities for guest users (not logged in)
     end
