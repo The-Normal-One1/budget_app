@@ -1,0 +1,55 @@
+<%= stylesheet_link_tag 'specifications/index', media: 'all' %> 
+
+<div class='specification_header'>
+
+<%= link_to groups_path do %>
+    <h1 class='categorie_title'>Categories</h1>
+<%end%>
+
+<h1 class='categorie_title'>Specifications</h1>
+
+<%=link_to destroy_user_session_path, :method => :delete do %>
+    <p>Logout</p>
+<% end %>
+
+</div>
+
+<div class='specifications_container'>
+<div class='specification-info'>
+<p>Total Amount: </p>
+<span>$<%= @group.total_spent %></span>
+
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Specification</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <%if @specifications.empty? %>
+            <tr>
+                <td colspan='4'>No specifications yet</td>
+            </tr>
+        <%end%>
+
+        <%@specifications.each do |specification|%>
+        <tr>
+            <td><img src="<%=specification.icon%>" alt="<%=specification.name%>"></td>
+            <td><%=specification.created_at.strftime("%d/%m/%Y")%></td>
+            <td><%=specification.name%></td>
+            <td>$<%=specification.amount %></td>
+        </tr>
+        <%end%>
+    </tbody>
+</table>
+</div>
+
+<%= link_to new_group_specification_path(@group.id) do %>
+    <button class='categorie_add'>Add new Specification</button>
+<%end%>
