@@ -6,7 +6,7 @@ class Ability
   def initialize(user)
     # Define abilities for the user here. For example:
     #
-    
+
     user ||= User.new # guest user (not logged in)
 
     if user.persisted?
@@ -14,7 +14,7 @@ class Ability
     # if user.persisted? # logged in
     #   can :manage, Group, user_id: user.id
     #   can :manage, Specification, user_id: user.id
-    #   can :manage, User, id: user.id 
+    #   can :manage, User, id: user.id
     else
       # No abilities for guest users (not logged in)
     end
