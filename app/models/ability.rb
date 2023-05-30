@@ -9,12 +9,12 @@ class Ability
     
     user ||= User.new # guest user (not logged in)
 
-    if user.admin?
+    if user.persisted?
       can :manage, :all
-    elsif user.persisted? # logged in
-      can :manage, Group, user_id: user.id
-      can :manage, Specification, user_id: user.id
-      can :manage, User, id: user.id 
+    # if user.persisted? # logged in
+    #   can :manage, Group, user_id: user.id
+    #   can :manage, Specification, user_id: user.id
+    #   can :manage, User, id: user.id 
     else
       # No abilities for guest users (not logged in)
     end
