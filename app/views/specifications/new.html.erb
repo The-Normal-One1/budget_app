@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'specifications/new', media: 'all' %>
+
+<div class='specification_header'>
+    <%=link_to groups_path do %>
+        <h1 class='specification_title'>Categories</h1>
+    <%end%>
+    <h1 class='specification_title'>Add Specification</h1>
+    <%= link_to destroy_user_session_path, :method => :delete do %>
+        <p>Logout</p>
+    <% end %>
+</div>
+
+<div class='specifiaction_container'>
+
+<%= form_for @specification, url: group_specifications_path, method: :post do |f| %> 
+
+    <div class='specification-body'>
+        <div class='form-group'>
+            <%= f.label :name, class:'form-label' %> <br>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'form-control' %>            
+        </div>
+
+        <div class='form-group'>
+            <%= f.label :amount, class:'form-label' %> <br>
+            <%= f.text_field :amount, autofocus: true, autocomplete: "amount", class:'form-control' %>
+        </div>
+    
+
+    <% if @groups.any? %>
+        <div class='form-group'>
+            <%= f.label :categories, class:'form-label' %> <br>
+            <%= select_tag :groups, options_for_select(@groups.map{|g| [g.name, g.id]}), class:'form-control', multiple: true, size: 3 %>
+        </div>
+    <% end %>
+    </div>
+
+
+<div class='specification_footer'>
+    <%= f.submit 'Add Category', class:'btn' %>
+</div>
+<% end %>
+</div>
