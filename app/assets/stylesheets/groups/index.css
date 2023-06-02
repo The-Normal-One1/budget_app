@@ -17,7 +17,6 @@
 
 .categories-container {
   width: 100%;
-  border: 1px solid red;
   padding: 1rem;
 }
 
@@ -61,6 +60,8 @@
   justify-content: center;
   border: 1px solid white;
   background-color: var(--color-green);
+  align-items: center;
+  margin-top: 1rem;
 }
 
 .categorie-add {
@@ -72,5 +73,33 @@
 }
 
 .categorie-add:hover {
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.form-inp {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-black-light);
+}
+
+.btn-category {
+  padding: 1rem;
+  background: transparent;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  border: none;
+  color: white;
+}
+
+.btn-category:hover {
   cursor: pointer;
 }
