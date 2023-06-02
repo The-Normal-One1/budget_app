@@ -1,5 +1,4 @@
 class SpecificationsController < ApplicationController
-
   def index
     @group = Group.find_by(user: current_user, id: params[:group_id])
     @specifications = @group.specifications
@@ -9,7 +8,7 @@ class SpecificationsController < ApplicationController
     @specification = current_user.specifications.build
     @groups = current_user.groups
   end
-  
+
   def create
     @specification = current_user.specifications.build(specification_params)
     @groups = params[:groups]
@@ -23,7 +22,7 @@ class SpecificationsController < ApplicationController
       render 'new'
     end
   end
-  
+
   private
 
   def specification_params
