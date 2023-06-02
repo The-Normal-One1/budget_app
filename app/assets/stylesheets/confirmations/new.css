@@ -1,6 +1,5 @@
 .confirmations-cont {
   background-color: var(--color-black-light);
-  border: 2px solid red;
   height: 100vh;
 }
 
@@ -32,9 +31,11 @@
 
 .confirm-btn {
   width: auto;
-  border: none;
+  border: 1px solid var(--color-black-dim);
   font-size: 1.2rem;
   padding: 1rem;
+  background-color: white;
+  margin-top: 1rem;
 }
 
 .confirm-btn:hover {
