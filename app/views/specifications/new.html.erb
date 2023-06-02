@@ -1,42 +1,42 @@
-<%= stylesheet_link_tag 'specifications/new', media: 'all' %>
+<%= stylesheet_link_tag 'specifications/index', media: 'all' %>
 
-<div class='specification_header'>
-    <%=link_to groups_path do %>
-        <h1 class='specification_title'>Categories</h1>
-    <%end%>
-    <h1 class='specification_title'>Add Specification</h1>
-    <%= link_to destroy_user_session_path, :method => :delete do %>
-        <p>Logout</p>
-    <% end %>
-</div>
+<div class= spec-cont>
+    <div class='specification-header'>
+        <%=link_to groups_path do %>
+            <i class="fas fa-arrow-left"></i>
+        <%end%>
+        <h1 class='specification-title'>Specifications</h1>
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+    </div>
 
-<div class='specifiaction_container'>
+<div class='specifications-container'>
 
 <%= form_for @specification, url: group_specifications_path, method: :post do |f| %> 
 
-    <div class='specification-body'>
+    <div class='specification-item'>
         <div class='form-group'>
-            <%= f.label :name, class:'form-label' %> <br>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'form-control' %>            
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class:'form-inp' %>            
         </div>
 
         <div class='form-group'>
-            <%= f.label :amount, class:'form-label' %> <br>
-            <%= f.text_field :amount, autofocus: true, autocomplete: "amount", class:'form-control' %>
+            <%= f.text_field :amount, autofocus: true, autocomplete: "amount", placeholder: 'Amount', class:'form-inp' %>
         </div>
     
 
     <% if @groups.any? %>
         <div class='form-group'>
             <%= f.label :categories, class:'form-label' %> <br>
-            <%= select_tag :groups, options_for_select(@groups.map{|g| [g.name, g.id]}), class:'form-control', multiple: true, size: 3 %>
+            <%= select_tag :groups, options_for_select(@groups.map{|g| [g.name, g.id]}), class:'form-category', multiple: true, size: 3 %>
         </div>
     <% end %>
     </div>
 
 
-<div class='specification_footer'>
-    <%= f.submit 'Add Category', class:'btn' %>
+<div class='btn-cont'>
+    <%= f.submit 'Add Category', class:'spec-add' %>
 </div>
 <% end %>
+</div>
 </div>

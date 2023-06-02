@@ -1,24 +1,21 @@
 class SpecificationsController < ApplicationController
-  load_and_authorize_resource
-
   def index
     @group = Group.find_by(user: current_user, id: params[:group_id])
     @specifications = @group.specifications
   end
 
   def new
-    @specification = Specification.new
-    @groups = Group.where(user: current_user)
+    @specification = current_user.specifications.build
+    @groups = current_user.groups
   end
 
   def create
-    @specification = Specification.new(specification_params)
+    @specification = current_user.specifications.build(specification_params)
     @groups = params[:groups]
     @groups.each do |id|
-      group = Group.find(id) unless id == ''
+      group = current_user.groups.find(id) unless id == ''
       @specification.groups << group
     end
-    @specification.author = current_user
     if @specification.save
       redirect_to group_specifications_path, notice: 'Specification was successfully created'
     else

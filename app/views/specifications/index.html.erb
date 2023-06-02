@@ -1,55 +1,69 @@
 <%= stylesheet_link_tag 'specifications/index', media: 'all' %> 
 
-<div class='specification_header'>
+<div class='spec-cont'>
+    <div class='specification-header'>
 
-<%= link_to groups_path do %>
-    <h1 class='categorie_title'>Categories</h1>
-<%end%>
-
-<h1 class='categorie_title'>Specifications</h1>
-
-<%=link_to destroy_user_session_path, :method => :delete do %>
-    <p>Logout</p>
-<% end %>
-
-</div>
-
-<div class='specifications_container'>
-<div class='specification-info'>
-<p>Total Amount: </p>
-<span>$<%= @group.total_spent %></span>
-
-</div>
-
-<table>
-    <thead>
-        <tr>
-            <th>Specification</th>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Amount</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <%if @specifications.empty? %>
-            <tr>
-                <td colspan='4'>No specifications yet</td>
-            </tr>
+        <%= link_to groups_path do %>
+            <i class="fas fa-arrow-left"></i>
         <%end%>
 
-        <%@specifications.each do |specification|%>
-        <tr>
-            <td><img src="<%=specification.icon%>" alt="<%=specification.name%>"></td>
-            <td><%=specification.created_at.strftime("%d/%m/%Y")%></td>
-            <td><%=specification.name%></td>
-            <td>$<%=specification.amount %></td>
-        </tr>
-        <%end%>
-    </tbody>
-</table>
-</div>
+        <h1 class='specification_title'>Specifications</h1>
 
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+
+    </div>
+
+    <div class='specifications-container'>
+        <div class='specification-item'>
+        <img src="<%= @group.icon %>" alt="<%= @group.name %>"> 
+            <span>Category: <%= @group.name %></span>
+
+        </div>
+
+        <div class='specification-item'>
+
+            <p>Total Amount: </p>
+            <span>$<%= @group.total_spent %></span>
+
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Specification</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <%if @specifications.empty? %>
+                    <tr>
+                    <td>
+                        <img src="https://img.icons8.com/ios/50/000000/empty-box.png" alt="empty-box">
+                    </td>
+                        <td colspan='4'>No specifications yet</td>
+                    </tr>
+                <%end%>
+
+                <%@specifications.each do |specification|%>
+                <tr>
+                    <td><img src= "https://img.icons8.com/ios/50/000000/checked-checkbox.png" alt="checked-checkbox"></td>
+                    <td><%=specification.created_at.strftime("%d/%m/%Y")%></td>
+                    <td><%=specification.name%></td>
+                    <td>$<%=specification.amount %></td>
+                </tr>
+                <%end%>
+            </tbody>
+        </table>
+    </div>
+
+<div class='btn-cont'>
 <%= link_to new_group_specification_path(@group.id) do %>
-    <button class='categorie_add'>Add new Specification</button>
+    <button class='spec-add'>Add new Specification</button>
 <%end%>
+</div>
+</div>

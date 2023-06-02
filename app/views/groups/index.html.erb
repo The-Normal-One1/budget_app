@@ -1,16 +1,17 @@
 <%= stylesheet_link_tag 'groups/index', media: 'all' %>
-<div class='categorie_header'>
-<h1 class='categorie_title'>Categories</h1>
-<%= link_to destroy_user_session_path, :method => :delete do %>
-    <p>Logout</p>
-<% end %>
-</div>
+<div class= 'category-cont'>
+    <div class='category-header'>
+        <h1 class='category-title'>Categories</h1>
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+    </div>
 
-<div class='categories_container'>
+<div class='categories-container'>
 <% @categories.each do |categorie|%>
     <%= link_to group_specifications_path(categorie.id) do %>
     
-    <div class='categorie_item'>
+    <div class='categorie-item'>
         <img src="<%=categorie.icon%>" alt="<%=categorie.name%>">
         <h2><%=categorie.name%></h2>
         <p>Total Spent: $<span><%=categorie.total_spent%></span></p>
@@ -19,6 +20,7 @@
     <%end%>
 <%end%>
 </div>
-<%= link_to new_group_path do %>
-    <button class='categorie_add'>Add new Category</button>
+<div class='btn-cont'><%= link_to new_group_path do %>
+    <button class='categorie-add'>Add new Category</button>
 <%end%>
+</div>
