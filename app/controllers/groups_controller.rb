@@ -10,9 +10,9 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @categories = Group.new(group_params)
-    @categories.user_id = current_user.id
-    if @categories.save
+    @categorie = Group.new(group_params)
+    @categorie.user_id = current_user.id
+    if @categorie.save
       redirect_to groups_path, notice: 'Category was successfully created'
     else
       render 'new'
