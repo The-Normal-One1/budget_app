@@ -5,19 +5,11 @@ Rails.application.routes.draw do
   # root to: "home#index"
 
   # Defines the root path route ("/")
-  root "pages#splash"
-
-  # # Define routes for the groups
-  # resources :groups
-
-  # # Define routes for the specifications
-  # resources :specifications
+  root to: "pages#splash"
 
   # Define routes for the users
   authenticate :user do
-   
       root to:'groups#index', as: :authenticated_root
-    
   end
 
   unauthenticated do
@@ -27,11 +19,6 @@ Rails.application.routes.draw do
   resources :groups do
     resources :specifications
   end
-
-
- 
-
-
   # Define routes for the home page
   # root "home#index"
 
