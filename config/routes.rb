@@ -12,10 +12,6 @@ Rails.application.routes.draw do
       root to:'groups#index', as: :authenticated_root
   end
 
-  unauthenticated do
-    root to: 'pages#splash', as: :unauthenticated_root
-  end
-
   resources :groups do
     resources :specifications
   end
