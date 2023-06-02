@@ -9,7 +9,7 @@
 
         <h1 class='specification_title'>Specifications</h1>
 
-        <%=link_to destroy_user_session_path, :method => :delete do %>
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
             <i class="fas fa-sign-out-alt"></i>
         <% end %>
 
