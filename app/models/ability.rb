@@ -14,7 +14,7 @@ class Ability
       # can :manage, :all
 
       if user.persisted? # logged in
-        can :manage, :groups, user_id: user.id
+        can :manage, :all, user_id: user.id
       else
         can :read, :pages, name: 'splash' # allow access to splash page for unauthenticated users
       end
