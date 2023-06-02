@@ -1,15 +1,23 @@
 class Ability
-  include CanCan::Ability
+    include CanCan::Ability
 
-  def initialize(user)
-    # Define abilities for the user here. For example:
-    #
+    def initialize(user)
+      # Define abilities for the user here. For example:
+      #
 
-    user ||= User.new # guest user (not logged in)
+      user ||= User.new # guest user (not logged in)
 
-    return unless user.persisted?
+      can :read, :pages, name: 'splash'
 
-    can :manage, :all
+      # return unless user.persisted? 
+
+      # can :manage, :all
+
+      if user.persisted? # logged in
+        can :manage, :groups, user_id: user.id
+      else
+        can :read, :pages, name: 'splash' # allow access to splash page for unauthenticated users
+      end
     # if user.persisted? # logged in
     #   can :manage, Group, user_id: user.id
     #   can :manage, Specification, user_id: user.id
