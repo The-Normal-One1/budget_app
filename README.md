@@ -78,6 +78,8 @@ email: budget1212@gmail.com
 password: 123456
 ```
 
+- [x] [A link to my video](https://drive.google.com/file/d/1IW9ma-75r34tmEC7G7SKVbX22qRRO-dT/view?usp=sharing)
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
