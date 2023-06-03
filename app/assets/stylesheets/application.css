@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-black: #434b54;
+  --color-black-light: #434b531a;
+  --color-black-mid: #434b54d6;
+  --color-blue: #3778c2;
+  --color-green: #5fb523;
+}
+
+@font-face {
+  font-family: 'Proxima Nova', sans-serif;
+  src: url('/assets/fonts/Proximanova.ttf') format('truetype');
+}
+
+body {
+  font-family: 'ProximaNova', sans-serif;
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.log-in-shared,
+.confirmations-shared,
+.forget-password-shared,
+.sign-up-shared {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}

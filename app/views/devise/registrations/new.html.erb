@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag 'registrations/new', media: 'all' %>
+
+<div class='registeration-cont'>
+  <div class='sign-up-header'>
+    <%# back-arrow icon %>
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+
+      <h2 class='register'>Register</h2>
+        <p></p>
+  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, placeholder: 'Name', class: 'form-inp' %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-inp' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: 'form-inp' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:'Password Confirmation', class: 'form-inp' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Next", class: 'submit-btn' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>
