@@ -52,7 +52,9 @@ gem 'bootsnap', require: false
 gem 'dotenv-rails', groups: %i[development test]
 
 # Add devise for user authentication
-gem 'devise'
+group :development, :test do
+  gem 'devise'
+end
 
 # authorization library for Rails
 gem 'cancancan'
@@ -66,6 +68,12 @@ gem 'rails-controller-testing'
 # robocop for linting
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Use Capybara for system testing
+gem 'capybara', groups: %i[development test]
+
+# webdrivers makes it easy to download and run Selenium & ChromeDriver
+gem 'webdrivers', groups: %i[development test]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -85,7 +93,5 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
