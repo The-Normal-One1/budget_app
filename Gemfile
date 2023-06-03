@@ -52,9 +52,8 @@ gem 'bootsnap', require: false
 gem 'dotenv-rails', groups: %i[development test]
 
 # Add devise for user authentication
-group :development, :test do
-  gem 'devise'
-end
+  gem 'devise', groups: %i[development test]
+
 
 # authorization library for Rails
 gem 'cancancan'
