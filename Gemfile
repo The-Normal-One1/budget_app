@@ -57,7 +57,6 @@ gem 'dotenv-rails', groups: %i[development test]
 # Add devise for user authentication
 gem 'devise'
 
-
 # authorization library for Rails
 gem 'cancancan'
 
