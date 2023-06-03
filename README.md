@@ -66,7 +66,10 @@ The Budget app is about building a mobile web application where you can manage y
 
 - Click [here](https://budget-app-70bx.onrender.com) to access to the app demo.
 - You can use the following information to login to the app
-
+```
+email: budget1212@gmail.com
+password: 123456
+```
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
