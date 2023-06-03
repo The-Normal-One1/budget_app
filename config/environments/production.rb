@@ -94,10 +94,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'budget-app-70bx.onrender.com', :protocol => 'https' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => 'a820427f53a7e2',
-    :password => 'ff7d0c727280dc',
+    :user_name => '15f9e4f981e14d',
+    :password => 'd3f4932bfd869d',
     :address => 'sandbox.smtp.mailtrap.io',
-    :domain => 'sandbox.smtp.mailtrap.io',
+    :host => 'sandbox.smtp.mailtrap.io',
     :port => '2525',
     :authentication => :cram_md5
   }
