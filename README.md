@@ -35,7 +35,13 @@
 
 # 📖 Blog-App <a name="ror"></a>
 
-The Budget app is about building a mobile web application where you can manage your budget
+The Budget app is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+
+You will create a Ruby on Rails application that allows the user to:
+
+- register and log in, so that the data is private to them.
+- introduce new transactions associated with a category.
+- see the money spent on each category.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -66,10 +72,12 @@ The Budget app is about building a mobile web application where you can manage y
 
 - Click [here](https://budget-app-70bx.onrender.com) to access to the app demo.
 - You can use the following information to login to the app
+
 ```
 email: budget1212@gmail.com
 password: 123456
 ```
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
