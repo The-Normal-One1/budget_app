@@ -1,0 +1,73 @@
+.specification-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.4rem;
+  background-color: var(--color-blue);
+  color: #fff;
+  z-index: 2;
+}
+
+.specification-title {
+  font-size: 1.6rem;
+  flex: 1;
+  text-align: center;
+}
+
+.fa-sign-out-alt,
+.fa-arrow-left {
+  font-size: 1.6rem;
+}
+
+.specifications-container {
+  width: 100%;
+}
+
+.specification-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--color-black-light);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  color: var(--color-black-mid);
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.form-label {
+  flex: 1;
+  font-size: 1.5rem;
+}
+
+.form-inp {
+  flex: 3;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-cont {
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  background-color: var(--color-green);
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.spec-add {
+  padding: 1rem;
+  background: transparent;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+}

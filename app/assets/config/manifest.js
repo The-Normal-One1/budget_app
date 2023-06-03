@@ -8,3 +8,4 @@
 //=link specifications/index.css
 //=link pages/splash.css
 //=link confirmations/new.css
+//=link specifications/new.css
