@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Specification, type: :model do
-
-  let(:user) { User.create(name:'Budget', email: 'budget1234@gmail.com', password: '1234567') } 
+  let(:user) { User.create(name: 'Budget', email: 'budget1234@gmail.com', password: '1234567') }
   let(:group) { Group.create(name: 'Budget', user_id: user.id, icon: 'icon') }
   let(:specification) { Specification.create(name: 'Budget', amount: 100, author_id: user.id, group_ids: group.id) }
 
@@ -26,5 +25,4 @@ RSpec.describe Specification, type: :model do
       expect(specification).to_not be_valid
     end
   end
-
 end

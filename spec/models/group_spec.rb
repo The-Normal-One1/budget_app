@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-
-  let(:user) { User.create(name:'Budget', email: 'budget1234@gmail.com', password: '1234567') } 
+  let(:user) { User.create(name: 'Budget', email: 'budget1234@gmail.com', password: '1234567') }
   let(:group) { Group.create(name: 'Budget', user_id: user.id, icon: 'icon') }
 
   describe 'validations' do
@@ -24,5 +23,5 @@ RSpec.describe Group, type: :model do
       group.icon = nil
       expect(group).to_not be_valid
     end
-  end    
+  end
 end

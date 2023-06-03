@@ -9,9 +9,8 @@ RSpec.describe 'Groups', type: :request do
     end
   end
 
-    before(:each) do
-
-  #   sign_in user
+  before(:each) do
+    #   sign_in user
     sign_in user
     get groups_path
   end
@@ -27,7 +26,7 @@ RSpec.describe 'Groups', type: :request do
 
     it 'renders the correct path' do
       expect(response).to render_template(:index)
-    end 
+    end
   end
 
   describe 'GET /new' do
@@ -39,12 +38,11 @@ RSpec.describe 'Groups', type: :request do
     it 'returns a list file' do
       get new_group_path
       expect(response.body).to include('Add Category')
-      end
+    end
 
     it 'renders the correct path' do
       get new_group_path
       expect(response).to render_template(:new)
     end
-
   end
 end
