@@ -6,6 +6,5 @@
 //=link groups/index.css
 //=link groups/new.css
 //=link specifications/index.css
-//=link specifications/new.css
 //=link pages/splash.css
 //=link confirmations/new.css
