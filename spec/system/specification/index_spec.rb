@@ -19,7 +19,6 @@ RSpec.describe 'Groups', type: :system do
     visit group_specifications_path(group.id)
   end
 
-
   describe 'GET /index' do
     it 'returns a list of specification' do
       visit group_specifications_path(group.id)
